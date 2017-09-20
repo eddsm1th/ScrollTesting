@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+	<title>Scroll Stuff</title>
+</head>
+<body onload="define_var()" onmousemove="move()">
+	<div class="scroll-arrows">
+		<h1 onclick="scroll_up()">&#9650;</h1>
+		<h1 onclick="scroll_down()">&#9660;</h1>
+	</div>
+	<section class="slide slide-3">
+		<img class="move-image" src="BG_3.jpg">
+		<div class="content-wrap">
+			<div>
+				<h1>Hello there</h1>	
+			</div>
+		</div>
+	</section>
+	<section class="slide slide-2">
+		<img class="move-image" src="BG_2.jpg">
+		<div class="content-wrap">
+			<div>
+				
+			</div>
+		</div>
+	</section>
+	<section class="slide slide-1">
+		<img class="move-image" src="BG_1.jpg">	
+		<div class="content-wrap">
+			<div>
+				<h1>Testing text inside the slide :)</h1>
+			</div>	
+		</div>
+	</section>
+	
+</body>
+<style type="text/css">
+	body{
+		margin: 0;
+		padding: 0;
+		overflow: hidden;
+		box-sizing: 
+	}
+
+	.scroll-arrows{
+		position: absolute;
+		z-index: 9999;
+		bottom: 30px;
+		left: 30px;
+		color: white;
+		font-size: 1.5rem;
+	}
+
+	.scroll-arrows > h1{
+		margin: 0;
+	}
+
+	.slide img{
+		position: absolute;
+		z-index: -9999;
+		object-fit: cover;	
+		transform: scale(1.04);
+	}
+
+	.slide .content-wrap > div{
+		position: absolute;
+		left: 50%;
+		top: 50%;
+		transform: translate(-50%, -50%);
+
+		text-align: center;
+		font-size: 72px;
+		color: white;
+	}
+
+	.slide{
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+		transition: 1.6s all ease;
+	}
+	.slide-1{
+		z-index: 999;
+	}
+	.slide-2{
+		z-index: 998;
+	}
+	.slide-3{
+		z-index: 997;
+	}
+
+	.content-wrap{
+		position: relative;
+		width: calc(100% - 120px);
+		height: calc(100% - 120px);
+		padding: 60px;
+	}
+</style>
+
+<script type="text/javascript">
+
+	var current_slide;
+
+	function scroll_up() { 
+		if ( current_slide < $('.slide').length)  {
+			$('.slide-' + current_slide.toString()).css('margin-top','-100%');
+			$('.slide-' + current_slide.toString()).delay(1600).fadeOut(1);
+
+			current_slide ++;
+		}
+		console.log(current_slide);
+	}
+
+	function scroll_down(){
+		$('.slide-' + (current_slide - 1).toString()).fadeIn(1);
+		$('.slide-' + (current_slide - 1).toString()).css('margin-top','0px');
+		
+		if ( current_slide > 0)  {
+			current_slide --;
+		}
+		console.log(current_slide);
+	}
+
+	function define_var(){
+		current_slide = 1;
+	}
+
+	function move(){
+		var Xoffset = get_offset(event.clientX, $( window ).width())
+		var Yoffset = get_offset(event.clientY, $( window ).height())
+
+		console.log('X:' + Xoffset + ' Y:' + Yoffset);
+		$('.move-image').css('transform','translate(' + Xoffset + 'px, ' + Yoffset + 'px) scale(1.04)');
+		$('.content-wrap').css('transform','translate(' + Xoffset*2 + 'px, ' + Yoffset*2 + 'px)');
+	}
+
+	function get_offset(mouse, browser){
+		return (((mouse - (browser / 2))/(browser / 2))*20) * -1;
+	}
+</script>
+</html>
