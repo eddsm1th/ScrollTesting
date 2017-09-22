@@ -219,6 +219,6 @@ body{
 }
 
 @keyframes margin-fix{
-    0%      {margin-left: -188px;}
+    0%      {margin-left: -200px;}
     100%    {margin-left: -6px;}
 }
