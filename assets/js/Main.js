@@ -3,7 +3,7 @@ var current_slide;
 function scroll_up() { 
     if ( current_slide < $('.slide').length)  {
         $('.slide-' + current_slide.toString()).css('margin-top','-100%');
-        $('.slide-' + current_slide.toString()).delay(1600).fadeOut(1);
+        $('.slide-' + current_slide.toString()).delay(1000).fadeOut(1);
 
         current_slide ++;
     }
@@ -29,7 +29,7 @@ function move(){
     var Yoffset = get_offset(event.clientY, $( window ).height())
 
     console.log('X:' + Xoffset + ' Y:' + Yoffset);
-    $('.move-image, .slide-1-text').css('transform','translate(' + Xoffset + 'px, ' + Yoffset + 'px) scale(1.04)');
+    $('.move-image, .slide-1-text, .diamond-wrap').css('transform','translate(' + Xoffset + 'px, ' + Yoffset + 'px) scale(1.04)');
     $('.content-wrap').css('transform','translate(' + Xoffset*2 + 'px, ' + Yoffset*2 + 'px)');
 }
 
