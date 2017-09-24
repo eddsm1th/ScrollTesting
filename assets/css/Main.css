@@ -367,7 +367,7 @@ body{
 }
 
 .circles-wrap{
-    animation-name: reverse-spin ;
+    animation-name: reverse-spin;
     animation-duration: 15s;
     animation-iteration-count: infinite;
     animation-timing-function: linear; 
@@ -587,7 +587,7 @@ body{
 .diagonal-lines > div{
     opacity: 1;
     margin: 0 auto;
-    animation-delay: 2s;
+    animation-delay: 1s;
 }
 
 .diagonal-lines > div:nth-child(1){
@@ -646,7 +646,7 @@ body{
     height: 100%;
     animation-name: diagonal-lines-two;
     animation-duration: 3s;
-    animation-delay: 3s;
+    animation-delay: 2s;
     animation-fill-mode: forwards;
     background: gold;
 }
