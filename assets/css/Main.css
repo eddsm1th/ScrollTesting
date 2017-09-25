@@ -713,3 +713,102 @@ body{
     0%      {transform: rotate(-45deg);}
     100%    {transform: rotate(135deg);}
 }
+
+.middle-graphic-border{
+    width: 464px;
+    height: 464px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.middle-graphic-border > div{
+    position: absolute;
+    animation-duration: 2s;
+    animation-delay: 1s;
+    animation-iteration-count: 1;
+    animation-fill-mode: forwards;
+}
+
+.middle-graphic-border > .circle-one{
+    width: 230px;
+    height: 230px;
+    margin: 0 230px 230px 0;
+    overflow: hidden;
+    animation-name: middle-graphic-wrap-circle-one-div;
+}
+.middle-graphic-border > .circle-two{
+    width: 230px;
+    height: 230px;
+    margin: 230px 230px 0 0;
+    overflow: hidden;
+    animation-name: middle-graphic-wrap-circle-two-div;
+    animation-timing-function: linear;
+}
+
+@keyframes middle-graphic-wrap-circle-one-div{
+    0%      {width: 230px; margin: 0 230px 230px 0;}
+    100%    {width: 464px; margin: 0 0 230px 0;}    
+}
+@keyframes middle-graphic-wrap-circle-two-div{
+    0%      {width: 230px; margin: 230px 0 0 230px;}
+    100%    {width: 464px; margin: 230px 0 0 0;}    
+}
+
+.middle-graphic-border > .circle-one > div{
+    width: 456px;
+    height: 456px;
+    border-top: 2px solid gold;
+    border-right: 2px solid gold;
+    border-bottom: 2px solid white;
+    border-left: 2px solid white;
+    transform: rotate(-232deg);
+    border-radius: 50%;
+    animation-name: middle-graphics-wrap-circle-one;
+    animation-duration: 3s;
+    animation-delay: 1s;
+    animation-iteration-count: 1;
+    animation-fill-mode: forwards;
+}
+
+.middle-graphic-border > .circle-two > div{
+    transform: translate(0px, -230px); 
+    animation-name: fix-right;
+    animation-timing-function: linear;
+    animation-duration: 2s;
+    animation-delay: 1s;
+    animation-iteration-count: 1;
+    animation-fill-mode: forwards;
+}
+
+@keyframes fix-right{
+    0%      {transform: translate(-230px, -230px);}
+    100%    {transform: translate(0px, -230px);}
+}
+
+.middle-graphic-border > .circle-two .circle{
+    width: 456px;
+    height: 456px;
+    border-top: 2px solid gold;
+    border-right: 2px solid gold;
+    border-bottom: 2px solid white;
+    border-left: 2px solid white;
+    border-radius: 50%;
+    animation-name: middle-graphics-wrap-circle-two;
+    animation-duration: 3s;
+    animation-delay: 1s;
+    animation-iteration-count: 1;
+    animation-fill-mode: forwards;
+    transform: rotate(330deg);
+    position: absolute;
+}
+
+@keyframes middle-graphics-wrap-circle-two{
+    0%      {transform: rotate(315deg);}
+    100%    {transform: rotate(495deg);}    
+}
+@keyframes middle-graphics-wrap-circle-one{
+    0%      {transform: rotate(-225deg);}
+    100%    {transform: rotate(-45deg);}    
+}
