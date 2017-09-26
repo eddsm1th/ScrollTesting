@@ -720,17 +720,17 @@ body{
     position: absolute;
     top: 50%;
     left: 50%;
-    transform: translate(-50%, -50%) rotate(-11deg);
+    transform: translate(calc(-50% - -2px), -50%) rotate(-6deg);
 }
 
 .border-2{
-    transform: translate(calc(-50% - 5px), calc(-50% - 5px)) rotate(169deg);
+    transform: translate(calc(-50% - 3px), calc(-50% - 5px)) rotate(174deg);
 }
 
 .middle-graphic-border > div{
     position: absolute;
     animation-duration: 2s;
-    animation-delay: 1s;
+    animation-delay: 3s;
     animation-iteration-count: 1;
     animation-fill-mode: forwards;
 }
@@ -759,12 +759,125 @@ body{
     border-radius: 50%;
     animation-name: middle-graphics-wrap-circle-one;
     animation-duration: 3s;
-    animation-delay: 1s;
+    animation-delay: 3s;
     animation-iteration-count: 1;
     animation-fill-mode: forwards;
+    animation-timing-function: ease-out;
 }
 
 @keyframes middle-graphics-wrap-circle-one{
     0%      {transform: rotate(-225deg);}
     100%    {transform: rotate(-45deg);}    
+}
+
+.horizontal-connectors{
+    position: absolute;
+    top: calc(50% - 26px);
+    width: 0px;
+    height: 44px;
+    border-top: 2px solid gold;
+    border-bottom: 2px solid gold;
+    animation-name: connector-left;
+    animation-duration: 3s;
+    animation-delay: 0s;
+    animation-iteration-count: 1;
+    animation-fill-mode: forwards;
+    animation-timing-function: ease-in;
+}
+
+.horizontal-connectors-right{
+    right: 0;
+}
+
+@keyframes connector-left{
+    0%      {width: 0px;}
+    100%    {width: calc(50% - 228px);}
+}
+
+.slide-2 .outer-lines > div > div{
+    background: gold;
+}
+
+.corner-circles > div{
+    width: 304px;
+    height: 304px;
+    position: absolute;
+}
+
+.corner-circles > div > div{
+    overflow: hidden;
+}
+
+.corner-circle-one{
+    top: 0;
+    left: 0;
+}
+.corner-circle-two{
+    top: 0;
+    right: 0;
+    transform: rotate(90deg);
+}
+.corner-circle-three{
+    bottom: 0;
+    right: 0;
+    transform: rotate(180deg);
+}
+.corner-circle-four{
+    bottom: 0;
+    left: 0;
+    transform: rotate(270deg);
+}
+
+.corner-circle-one > div, .corner-circle-two > div, .corner-circle-three > div, .corner-circle-four > div{ 
+    width: 152px;
+    height: 152px;
+    margin: 0 152px 152px 0;
+}
+
+.corner-circle-one > div > div, .corner-circle-two > div > div, .corner-circle-three > div > div, .corner-circle-four > div > div{
+    width: 300px;
+    height: 300px;
+    border-radius: 50%;
+    border-left: 2px solid white;
+    border-top: 2px solid white;
+    border-right: 2px solid white;
+    border-bottom: 2px solid gold;
+    transform: rotate(-315deg);
+    animation-name: rotate-in-one;
+    animation-duration: 3s;
+    animation-delay: 1s;
+    animation-iteration-count: 1;
+    animation-fill-mode: forwards;
+}
+
+.corner-circle-two > div > div{
+    transform: rotate(-135deg);
+    animation-name: rotate-in-two;
+}
+
+.corner-circle-three > div > div{
+    transform: rotate(45deg);
+    animation-name: rotate-in-three;
+}
+
+.corner-circle-four > div > div{
+    transform: rotate(225deg);
+    animation-name: rotate-in-four;
+}
+
+@keyframes rotate-in-one{
+    0%      {transform: rotate(-315deg);}
+    100%    {transform: rotate(-225deg);}
+}
+@keyframes rotate-in-two{
+    0%      {transform: rotate(-135deg);}
+    100%    {transform: rotate(-225deg);}
+}
+@keyframes rotate-in-three{
+    0%      {transform: rotate(45deg);}
+    100%    {transform: rotate(135deg);}
+}
+@keyframes rotate-in-four{
+    0%      {transform: rotate(225deg);}
+    100%    {transform: rotate(135deg);}
 }
