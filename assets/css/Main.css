@@ -653,7 +653,7 @@ body{
 
 @keyframes diagonal-lines-two{
     0%      {opacity: 1; width: 0%; margin-right: 100%;}
-    100%    {opacity: 1; width: 100%; margin-right: 0%;}    
+    50%    {opacity: 1; width: 100%; margin-right: 0%;}       
 }
 
 .horizontal-lines > .line-1, .horizontal-lines > .line-3, .vertical-lines > .line-1, .vertical-lines > .line-3{
@@ -724,7 +724,7 @@ body{
 }
 
 .border-2{
-    transform: translate(calc(-50% - 3px), calc(-50% - 5px)) rotate(174deg);
+    transform: translate(calc(-50% - 3px), calc(-50% - 8px)) rotate(174deg);
 }
 
 .middle-graphic-border > div{
@@ -865,6 +865,44 @@ body{
     animation-name: rotate-in-four;
 }
 
+.circle-mid-one{
+    top: calc(50% - 26px);
+}
+
+.circle-mid-one > div > div{
+   animation-name: rotate-in-four; 
+}
+.circle-mid-two{
+    top: 50%;
+    transform: translateY(calc(-100% + 22px)) rotate(-90deg);
+}
+
+.circle-mid-two > div > div{
+   animation-name: rotate-in-one; 
+}
+
+.circle-mid-three{
+    top: calc(50% - 26px);
+    right: 0;
+    left: inherit;
+    transform: rotate(+90deg);
+}
+
+.circle-mid-three > div > div{
+   animation-name: rotate-in-three; 
+}
+
+.circle-mid-four{
+    top: 50%;
+    right: 0;
+    left: inherit;
+    transform: translateY(calc(-100% + 22px)) rotate(180deg);
+}
+
+.circle-mid-four > div > div{
+   animation-name: rotate-in-two; 
+}
+
 @keyframes rotate-in-one{
     0%      {transform: rotate(-315deg);}
     100%    {transform: rotate(-225deg);}
@@ -881,3 +919,4 @@ body{
     0%      {transform: rotate(225deg);}
     100%    {transform: rotate(135deg);}
 }
+
